@@ -27,11 +27,11 @@ body {
             <div class="col-sm-8"></div>
             <div class="col-sm-4 h-100 d-flex">
                   <div class="align-self-center">
-                        <h3 class="text-info font-weight-light mb-4">PhotoBucket</h3>
+                        <h3 class="text-info font-weight-light mb-4">Login</h3>
      	
    <form:form class="form-group" method="post" action="save">    
           <form:input class="form-control" path="username" required="true"/><br>  
-          <form:input class="form-control" path="password" required="true"/><br>  
+          <form:input class="form-control" path="password" type="password" required="true"/><br>  
           <input class="btn btn-info" type="submit" value="Login" />    
        </form:form>
         <hr/>
