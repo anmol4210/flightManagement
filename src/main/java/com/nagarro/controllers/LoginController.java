@@ -1,18 +1,20 @@
 package com.nagarro.controllers;
 
-import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.nagarro.models.User;
 import com.nagarro.service.AuthenticateUser;
-import com.nagarro.util.HibernateUtil;
 
 @Controller
-public class UserController {
+public class LoginController {
+
+	@Autowired
+	AuthenticateUser authuser;
+	
 //	@RequestMapping(value="/flightSearch")
 //	public String login(){
 //		System.out.println("In login");
@@ -37,7 +39,7 @@ public class UserController {
 	    public ModelAndView save(@ModelAttribute("user") User user){  
 	        System.out.println("login: "+user.getUsername()+" "+user.getPassword());  
 
-	   AuthenticateUser authuser=new AuthenticateUser();
+	 //  AuthenticateUser authuser=new AuthenticateUser();
 	     if(authuser.findUser(user)){
 	    	 
 	    	 return new ModelAndView("flightDetails","command",new User());

@@ -1,6 +1,7 @@
 package com.nagarro.models;
 
 public class User {
+	
 private String username,password;
 private int id;
 
